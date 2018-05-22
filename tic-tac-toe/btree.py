@@ -5,11 +5,10 @@ class BTree:
     """
     Binary decision tree data structure
     """
-    def __init__(self, root=Node):
+    def __init__(self, root=None):
         self._root = root
 
     def __iter__(self):
-
         data = []
 
         def recurse(node):
@@ -24,5 +23,5 @@ class BTree:
         """
         item: node for the tree
         """
-        self._root.children.append(item)
+        self._root.children.append(BTree(item))
 
